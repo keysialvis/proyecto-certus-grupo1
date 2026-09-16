@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/*-------  HEADER ----------*/
+.header{
+    background-color: #181818;
+    width: 100%;
+    min-height: 80px; /* Cambiado de 6vh a altura fija para evitar desbordes */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribuye mejor los elementos a los extremos */
+    align-items: center;
+    padding: 0 4%;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img{
+    max-height: 50px; 
+    width: auto;     
+    object-fit: contain;  
+}
+
+.logo h2{
+    color: #ffffff;
+    font-size: 24px; /* Ajustado para un diseño más limpio */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav a{
+    text-decoration: none;
+    padding: 0 20px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(245, 245, 249);
+    transition: color 0.3s ease; /* Transición suave en vez de cambio de tamaño brusco */
+}
+
+.nav a:hover{
+    color: rgb(177, 146, 184);
+}
+
+.redes-sociales {
+    display: flex;
+    align-items: center;
+}
+
+.redes-sociales a {
+    color: #ffffff;
+    padding: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: rgb(177, 146, 184);
+    transform: scale(1.2); /* Animación moderna usando escala sin romper la línea */
+}
+
+
+/*-- Main -------------------------*/
+
+
+
+/*-- Main Adaptado a la Referencia (Alternado) -------------------------*/
+/*-- SECTION 2-------*/
+/* --- ESTILOS GENERALES Y BANNER --- */
+main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+.section-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/street11.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.section-1 h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.section-1 p {
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* --- SECCIONES DE CONTENIDO (HISTORIA, MISIÓN, VISIÓN) --- */
+.section-2-izquierda,
+.section-3-derecha,
+.section-4-izquierda {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contenedor base con Flexbox */
+.container-tarjeta {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Espacio entre la imagen y el texto */
+}
+
+/* ALINEACIÓN: Forzamos a la sección 3 (Misión) a invertir su orden */
+.section-3-derecha .container-tarjeta {
+    flex-direction: row-reverse;
+}
+
+/* DISEÑO DE IMÁGENES Y TEXTOS */
+.nosotros-img-izquierda,
+.nosotros-img-derecha {
+    flex: 1; /* Ocupa el 50% del contenedor */
+}
+
+.nosotros-img-izquierda img,
+.nosotros-img-derecha img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Evita que la foto se deforme */
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.text-historia {
+    flex: 1; /* Ocupa el otro 50% del contenedor */
+}
+
+.text-historia h2 {
+    font-size: 2.4rem;
+    color: #111;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Línea decorativa debajo de los títulos */
+.text-historia h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #ff4a57; /* Color deportivo (puedes cambiarlo) */
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.text-historia p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+/*-----------------------------------*/
+/*------- FOOTER ----------*/
+.footer{
+    background-color: rgb(33, 32, 31);
+    width: 100%;
+    min-height: 200px; /* Cambiado de 25vh a min-height estable */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 4%;
+}
+
+.logo-pie{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-pie img{
+    max-height: 100px;   
+    width: auto;
+    object-fit: contain;  
+}
+
+.texto-pie{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #b4d5f1;
+    padding-top: 15px;
+}
+
+.piederecho{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.piederecho a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.piederecho a:hover {
+    text-decoration: underline;
+}
+
+.pieizquierdo{
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*-----------------------------------*/
+/*------- MODO RESPONSIVO HEADER AND FOOTER----------*/
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav a {
+        padding: 5px 10px;
+    }
+    .titulo-pagina {
+        font-size: 32px;
+    }
+    .bloque-historia {
+        padding: 15px; /* Menos espacio interno en pantallas chicas */
+    }
+    .fila-superior-pie {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .logo-pie {
+        justify-content: center;
+    }
+    .texto-pie {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .piederecho {
+        justify-content: center;
+    }
+}
+/* --- DISEÑO RESPONSIVO DEL MAIN--- */
+@media screen and (max-width: 768px) {
+    .section-1 h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-1 p {
+        font-size: 1.2rem;
+    }
+
+    .section-2-izquierda,
+    .section-3-derecha,
+    .section-4-izquierda {
+        padding: 40px 20px;
+    }
+
+    /* Rompe las filas y las convierte en columnas verticales */
+    .container-tarjeta,
+    .section-3-derecha .container-tarjeta {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Ajuste de imágenes para pantallas pequeñas */
+    .nosotros-img-izquierda img,
+    .nosotros-img-derecha img {
+        height: 280px; /* Menos altura para que no sature el celular */
+    }
+
+    /* Centrar textos en pantallas móviles si lo prefieres */
+    .text-historia {
+        text-align: center;
+    }
+
+    .text-historia h2::after {
+        margin: 10px auto 0 auto; /* Centra la línea decorativa roja */
+    }
+}
