@@ -19,32 +19,25 @@
 }
 /* Diseño logo */
 .logo{
-    width: 20%;
-    height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
 .logo img{
-    max-height: 70px; /* Fijamos una altura máxima clara */
+    max-height: 50px; /* Fijamos una altura máxima clara */
     width: auto;     /* La anchura se ajusta automáticamente */
     object-fit: contain;  /* Garantiza que la imagen se escale sin recortarse */
 }
 .logo h2{
     color: #ffffff;
-    font-size: 32px;
+    font-size: 24px; /* Ajustado para un diseño más limpio */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-left: 10px;
     white-space: nowrap;
 }
 
 /* Diseño barra de navegación */
 .nav{
-    
-    width: 75%;
-    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -52,13 +45,14 @@
 }
 .nav a{
     text-decoration: none;
-    padding: 0px 20px;
+    padding: 0 20px;
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(245, 245, 249);
+    transition: color 0.3s ease;
 }
 .nav a:hover{
-    color: rgb(150, 136, 166);
+     color: rgb(177, 146, 184);
 }
 /* Diseño redes sociales */
 .redes-sociales{
@@ -66,13 +60,14 @@
     align-items: center;
 }
 .redes-sociales i{
+    color: #ffffff;
+    padding: 0 10px;
     font-size: 18px;
-    padding: 0px 10px;
-    color: rgb(255, 255, 255);
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 .redes-sociales i:hover{
-    font-size: 30px;
     color: rgb(177, 146, 184);
+    transform: scale(1.2); /* Animación moderna usando escala sin romper la línea */
 }
 /*END HEADER*/
 /*-----------------------------------*/
