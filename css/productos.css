@@ -226,19 +226,15 @@
 }
 
 .pieizquierdo{
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     color: #ffffff;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .pieizquierdo a{
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: underline;
 }
 /*------------- END FOOTER -----------*/
 /*------------------------------------*/
@@ -330,6 +326,18 @@
     }
 
     /* Footer ajustado */
+    .footer {
+        height: auto;
+        padding: 25px 15px;
+    }
+
+    .logo-pie {
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .logo-pie img {
+        max-height: 45px; /*imita explícitamente el alto máximo de la imagen independientemente de las dimensiones del contenedor o del tamaño de la pantalla.*/
+    }
     .texto-pie {
         flex-direction: column;
         gap: 15px;
