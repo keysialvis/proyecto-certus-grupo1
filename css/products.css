@@ -42,7 +42,7 @@
 
 /* Diseño barra de navegación */
 .nav{
-    background-color: transparent;
+    
     width: 75%;
     height: 100%;
     display: flex;
@@ -270,7 +270,6 @@
 
     .nav {
         width: auto;
-        background-color: #97b4aa;
     }
 
     .nav a {
