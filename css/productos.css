@@ -52,7 +52,7 @@
 }
 .nav a{
     text-decoration: none;
-    padding: 0px 30px;
+    padding: 0px 20px;
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(245, 245, 249);
@@ -63,13 +63,11 @@
 /* Diseño redes sociales */
 .redes-sociales{
     display: flex;
-    text-align: center;
     align-items: center;
-    justify-content: center;
 }
 .redes-sociales i{
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 18px;
+    padding: 0px 10px;
     color: rgb(255, 255, 255);
 }
 .redes-sociales i:hover{
