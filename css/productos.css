@@ -59,13 +59,13 @@
     display: flex;
     align-items: center;
 }
-.redes-sociales i{
+.redes-sociales a{
     color: #ffffff;
     padding: 0 10px;
     font-size: 18px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
-.redes-sociales i:hover{
+.redes-sociales a:hover{
     color: rgb(177, 146, 184);
     transform: scale(1.2); /* Animación moderna usando escala sin romper la línea */
 }
