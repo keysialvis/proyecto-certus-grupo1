@@ -336,7 +336,7 @@
         margin-bottom: 15px;
     }
     .logo-pie img {
-        max-height: 45px; /*imita explícitamente el alto máximo de la imagen independientemente de las dimensiones del contenedor o del tamaño de la pantalla.*/
+        max-height: 30px; /*imita explícitamente el alto máximo de la imagen independientemente de las dimensiones del contenedor o del tamaño de la pantalla.*/
     }
     .texto-pie {
         flex-direction: column;
