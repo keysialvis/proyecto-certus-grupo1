@@ -330,34 +330,13 @@
     }
 
     /* Footer ajustado */
-    .footer {
-        height: auto;
-        padding: 25px 15px;
-    }
-
-    .logo-pie {
-        height: auto;
-        margin-bottom: 15px;
-    }
-    .logo-pie img {
-        max-height: 45px; /*imita explícitamente el alto máximo de la imagen independientemente de las dimensiones del contenedor o del tamaño de la pantalla.*/
-    }
     .texto-pie {
         flex-direction: column;
-        height: auto;
         gap: 15px;
         text-align: center;
-        padding-top: 15px;
     }
-
-    .piederecho, .pieizquierdo {
-        width: 100%;
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .piederecho a, .pieizquierdo a {
-        margin: 3px 0;
+    .piederecho {
+        justify-content: center;
     }
 }
 
