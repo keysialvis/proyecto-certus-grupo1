@@ -126,7 +126,10 @@
         let cuotas_validas = 0;
 
         for (let n = 1; n <= 12; n++) {
-            if (cuotas == n) { cuotas_validas = 1; }
+            if (cuotas == n) 
+            { 
+                cuotas_validas = 1; 
+            }
         }
 
         if (cuotas_validas == 0) {

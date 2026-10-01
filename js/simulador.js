@@ -1,4 +1,4 @@
-function calcularCarrito() {
+function calcularCarrito() { 
     // 1. Pedimos la cantidad de productos
     let cantidadProductos = prompt("¡Bienvenido a Rise&Run!\n¿Cuántos productos deseas agregar al carrito?");
 
