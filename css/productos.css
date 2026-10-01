@@ -240,6 +240,104 @@
 /*------------------------------------*/
 /*------------------------------------*/
 /*------------------------------------*/
+/*-----------------------------------*/
+/*-- SECCIÓN SIMULADOR DSCTO CUPON (R&R) -*/
+.seccion-simulador {
+    background-color: #f4f6f5;
+    width: 100%;
+    padding: 50px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid #8aaca0;
+}
+
+.seccion-simulador h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 32px;
+    color: #181818;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.seccion-simulador p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.seccion-simulador code {
+    background-color: #b0cac1;
+    color: #181818;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Botón principal estilo Rise&Run */
+.btn-simulador {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #181818;
+    border: 1px solid #181818;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-simulador:hover {
+    background-color: #8aaca0;
+    color: #181818;
+    border-color: #0a0a0a;
+}
+
+/* Tarjeta del Resumen de Compra */
+.tarjeta-resultado {
+    width: min(100%, 600px);
+    background-color: #ffffff;
+    border: 1px solid #363434;
+    padding: 25px 30px;
+    margin-top: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tarjeta-resultado h3 {
+    font-size: 22px;
+    color: #181818;
+    border-bottom: 2px solid #b0cac1;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-resultado ul {
+    list-style: none;
+    margin: 15px 0;
+    padding-left: 0;
+}
+
+.tarjeta-resultado li {
+    padding: 6px 10px;
+    background-color: #f9f9f9;
+    border-left: 3px solid #8aaca0;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.tarjeta-resultado h4 {
+    font-size: 20px;
+    color: #181818;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+}
+/*-- END SECCIÓN SIMULADOR DSCTO CUPON --*/
 /*------------------------------------*/
 /*------------------------------------*/
 /*Aplicando el @media query para un diseño responsivo*/
