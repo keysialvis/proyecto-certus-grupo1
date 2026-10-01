@@ -50,7 +50,24 @@
                 <figcaption class="banner-contenido">
                     <h2 class="banner-titulo">PROMOS CON HASTA EL 30% DE DSCTO</h2>
                     <p class="banner-subtitulo">Aprovecha los descuentos y promociones que tenemos para ti.</p>
-                    <a href="productos.html" class="banner-boton">VER MÁS PROMOS</a>
+                    <button class="banner-boton" id="boton-promo">VER MÁS PROMOS</button>
+
+                    <!-- ESTRUCTURA DEL MODAL PERSONALIZADO -->
+                    <div id="miModal" class="modal-fondo">
+                        <div class="modal-contenido">
+                            <!-- Botón para cerrar la ventana (X) -->
+                            <span class="modal-cerrar">&times;</span>
+                            
+                            <!-- Contenido del aviso deportivo -->
+                            <h2>⚡ ¡PROMO EXCLUSIVA DE RISE&RUN! ⚡</h2>
+                            <p class="modal-texto">Aprovecha hoy hasta un <strong>30% de descuento</strong> en nuestros Essentials.</p>
+                            <div class="cupon-box">
+                                <p class="modal-texto">Usa el cupón en tu carrito:</p>
+                                <span class="codigo-cupon">OTOÑO20 o RISERUN10</span>
+                            </div>
+                            <p class="modal-nota">*Válido por tiempo limitado en zapatillas y streetwear seleccionados.</p>
+                        </div>
+                    </div>
                 </figcaption>
             </figure>
         </section>
@@ -110,5 +127,6 @@
     </div>
     </footer>
 
+    <script src="js/promos_cupon.js"></script>
 </body>
 </html>
