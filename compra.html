@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Compra | Rise&Run</title>
+        <link rel="stylesheet" href="css/compra.css">
+    </head>
+
+    <body>
+        <header class="cabecera-compra">
+            <a class="marca" href="index.html">
+                <img src="img/RnR_logomini.jpg" alt="Logo Rise and Run">
+                <span>Rise&Run</span>
+            </a>
+
+            <nav class="menu-compra">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a class="activo" href="productos.html">Productos</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </header>
+
+        <main class="pagina-compra">
+            <a class="volver" href="productos.html">← Volver a productos</a>
+
+            <div class="titulo-compra">
+                <div>
+                    <h1>Completa tu compra.</h1>
+                    <p>Elige tu producto, completa tus datos y genera tu boleta.</p>
+                </div>
+
+                <div class="pasos">
+                    <span>01 · Producto</span>
+                    <span>02 · Tus datos</span>
+                    <span>03 · Boleta</span>
+                </div>
+            </div>
+
+            <div class="columnas-compra">
+                <section class="tarjeta">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-seccion">01</span>
+                        <h2>Compra</h2>
+                    </div>
+
+                    <!-- El onsubmit evita que la pagina se recarge al enviar un formulario
+                    y el oninput hace de que cuando se cambie un dato del formulario
+                    se oculte la boleta con la funcion ocultar boleta-->
+
+                    <form id="formulario-compra" onsubmit="generarBoleta(); return false;" oninput="ocultarBoleta();">
+                        <div class="campo campo-producto">
+                            <label for="producto">Producto</label>
+
+                            <!-- onchange activa elegirproducto -->
+                            <select id="producto" name="producto" onchange="elegirProducto();" required>
+                                <option value="1">Essentialis Hoddie — S/ 120.00</option>
+                                <option value="2">Eaquale Set — S/ 140.00</option>
+                                <option value="3">Otium Set — S/ 85.00</option>
+                                <option value="4">Impetus Sneakers — S/ 95.00</option>
+                                <option value="5">Vestigium — S/ 110.00</option>
+                                <option value="6">Velox Sneakers — S/ 80.00</option>
+                                <option value="7">Radicalis Tee — S/ 55.00</option>
+                                <option value="8">Primalis Tee — S/ 50.00</option>
+                                <option value="9">Classicus Tee — S/ 45.00</option>
+                            </select>
+                        </div>
+
+                        <div class="producto-elegido">
+                            <img id="producto-imagen" src="img/hoddie1.jpg" alt="Essentialis Hoddie">
+                            
+                            <div>
+                                <p class="sobretitulo">RISE&RUN STREETWEAR</p>
+                                <h3 id="producto-nombre">Essentialis Hoddie</h3>
+                                <p id="producto-precio" class="precio-producto">S/ 120.00</p>
+                                <p class="precio-nota">Precio unitario sin IGV</p>
+                                <a class="enlace-texto" href="productos.html">Ver catálogo</a>
+                            </div>
+
+                        </div>
+
+                        <div class="campo">
+                            <label for="cliente">Nombre del cliente</label>
+
+                            <input type="text" id="cliente" name="cliente" placeholder="Escribe tu nombre" required>
+                        </div>
+
+                        <div class="campos-dobles">
+                            <div class="campo">
+                                <label for="talla">Talla</label>
+
+                                <select id="talla" name="talla" required>
+                                    <option value="">Selecciona una talla</option>
+                                </select>
+                            </div>
+
+                            <div class="campo">
+                                <label for="cantidad">Cantidad</label>
+                                <input type="number" id="cantidad" name="cantidad" min="1" max="20" value="1" required>
+                                <small>De 1 a 20 unidades.</small>
+                            </div>
+                        </div>
+
+                        <div class="campo campo-cuotas">
+                            <label for="cuotas">Numero de cuotas</label>
+                            <input type="number" id="cuotas" name="cuotas" min="1" max="12" value="1" required>
+                            <small id="ayuda-cuotas">De 1 a 10 cuotas: 20% de interés. De 11 a 12 cuotas: 10%.</small>
+                        </div>
+
+                        <button type="submit" class="boton boton-principal boton-ancho">Generar boleta</button>
+                        
+                        <p id="mensaje-exito" class="mensaje-exito" style="display: none;" role="status">Boleta generada. <a href="#boleta">Ver detalle y cuotas</a></p>
+                    </form>
+                </section>
+
+
+
+
+
+                <div class="resumen">
+                    <div class="encabezado-tarjeta">
+                        <span class="numero-seccion">02</span>
+
+                        <h2>Tu resumen</h2>
+                    </div>
+
+                    <p id="resumen-producto" class="resumen-producto">Essentialis Hoddie</p>
+
+                    <div id="resumen-inicial">
+                        <div class="linea-resumen">
+                            <span>Precio sin IGV</span>
+                            <strong id="resumen-precio">S/ 120.00</strong>
+                        </div>
+                        
+                        <div class="linea-resumen">
+                            <span>IGV</span>
+                            <strong>18%</strong>
+                        </div>
+                        
+                        <p class="nota-resumen">Completa el formulario y pulsa Generar boleta para ver el total y tus cuotas.</p>
+                    </div>
+                    <!-- El "style = none" hace que este ocultto hasta generar la boleta -->
+                    <div id="resumen-calculado" style="display: none;">
+                        <div class="linea-resumen">
+                            <span>Subtotal</span>
+                            <strong id="resumen-subtotal"></strong>
+                        </div>
+                        
+                        <div class="linea-resumen">
+                            <span>IGV (18%)</span>
+                            <strong id="resumen-igv"></strong>
+                        </div>
+                        
+                        <div class="linea-resumen">
+                            <span id="resumen-tasa">Interés</span>
+                            <strong id="resumen-interes"></strong>
+                        </div>
+                        
+                        <div class="total-resumen">
+                            <span>Total a pagar</span>
+                            <strong id="resumen-total"></strong>
+                        </div>
+                        
+                        <div class="linea-cuota">
+                            <span>Cuota mensual regular</span>
+                            <strong id="resumen-cuota"></strong>
+                        </div>
+                        
+                        <p class="nota-resumen">La última cuota se ajusta por redondeo cuando hace falta.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+ 
+            <section id="boleta" class="boleta" style="display: none;">
+                <div class="boleta-encabezado">
+                    <div>
+                        <p class="sobretitulo">RISE&RUN STREETWEAR</p>
+                        <h2>Tu boleta está lista.</h2>
+                    </div>
+                </div>
+
+                <div class="boleta-cliente">
+                    <div>
+                        <p>Cliente</p>
+                        <strong id="boleta-cliente"></strong>
+                    </div>
+
+                    <div>
+                        <p>Plan de pago</p>
+                        <strong id="boleta-plan"></strong>
+                    </div>
+                </div>
+
+                <div class="detalle-producto">
+                    <div>
+                        <p>Producto</p>
+                        <strong id="boleta-producto"></strong>
+                    </div>
+
+                    <div>
+                        <p>Talla</p>
+                        <strong id="boleta-talla"></strong>
+                    </div>
+
+                    <div>
+                        <p>Cantidad</p>
+                        <strong id="boleta-cantidad"></strong>
+                    </div>
+
+                    <div>
+                        <p>Precio sin IGV</p>
+                        <strong id="boleta-precio"></strong>
+                    </div>
+                </div>
+
+                <div class="detalle-importes">
+                    <div class="linea-resumen">
+                        <span>Subtotal</span>
+                        <strong id="boleta-subtotal"></strong>
+                    </div>
+
+                    <div class="linea-resumen">
+                        <span>IGV (18%)</span>
+                        <strong id="boleta-igv"></strong>
+                    </div>
+
+                    <div class="linea-resumen">
+                        <span id="boleta-tasa">Interés</span>
+                        <strong id="boleta-interes"></strong>
+                    </div>
+
+                    <div class="boleta-total">
+                        <span>Deuda total</span>
+                        <strong id="boleta-total"></strong>
+                    </div>
+                </div>
+
+                <div class="estado-cuenta">
+                    <h3>Estado de cuenta</h3>
+                    <p class="nota-estado">Detalle de las cuotas de tu compra.</p>
+                    <div id="lista-cuotas" class="lista-cuotas"></div>
+                    <p class="nota-estado">La última cuota incluye el ajuste de centavos cuando es necesario.</p>
+                </div>
+
+                <!-- onclick oculta la boleta y te manda al formulario 
+                 (no resetea los datos puestos en el formulario) -->
+                <div class="boleta-pie">
+                    <p>Gracias por elegir Rise&Run.</p>
+                    <a id="editar-datos" class="boton boton-principal" href="#formulario-compra" onclick="ocultarBoleta();">Editar datos</a>
+                </div>
+            </section>
+        </main>
+
+
+
+
+
+        <footer class="pie-compra">
+            <span class="marca-pie">Rise&Run</span>
+            <p>© 2026 Rise and Run S. A. C.</p>
+            <a href="productos.html">Seguir explorando</a>
+        </footer>
+
+
+
+
+
+        <script>
+            /* Datos fijos */
+            let pro, pre, imagen, tipo;
+            /* Function reune instrucciones que luego se pueden ejecutar sin escribir todo de nuevo */
+            /* value sirve para leer o cambiar el texto que esta en un formulario */
+            /* getElementById busca un elemento por su id */
+            /*  
+                pro = nombre del producto
+                pre = precio
+                imagen = nombre del archivo de imagen
+                tipo = si es ropa o calzado 
+            */
+            function elegirProducto() {
+                let opcion = document.getElementById("producto").value;
+
+                /* Dependiendo de la opcion elegida en el formulario te devuelve un 
+                producto; precio; imagen; tipo (porque cada uno esta asignado por un value)*/
+
+                if (opcion == 1) {
+                    pro = "Essentialis Hoddie"; pre = 120; imagen = "hoddie1.jpg"; tipo = "ropa";
+                } else if (opcion == 2) {
+                    pro = "Eaquale Set"; pre = 140; imagen = "buzo5.jpg"; tipo = "ropa";
+                } else if (opcion == 3) {
+                    pro = "Otium Set"; pre = 85; imagen = "buzo6.jpg"; tipo = "ropa";
+                } else if (opcion == 4) {
+                    pro = "Impetus Sneakers"; pre = 95; imagen = "zombie5.jpg"; tipo = "calzado";
+                } else if (opcion == 5) {
+                    pro = "Vestigium"; pre = 110; imagen = "zombie4.jpg"; tipo = "calzado";
+                } else if (opcion == 6) {
+                    pro = "Velox Sneakers"; pre = 80; imagen = "zombie10.jpg"; tipo = "calzado";
+                } else if (opcion == 7) {
+                    pro = "Radicalis Tee"; pre = 55; imagen = "polo3.jpg"; tipo = "ropa";
+                } else if (opcion == 8) {
+                    pro = "Primalis Tee"; pre = 50; imagen = "polo5.jpg"; tipo = "ropa";
+                } else if (opcion == 9) {
+                    pro = "Classicus Tee"; pre = 45; imagen = "polo7.jpg"; tipo = "ropa";
+                }
+                
+                /* textContent escribe texto en una parte de la página
+                   src cambia la imagen 
+                   alt cambia la descripción del img */
+
+                /* tofixed sirve sirve para poner cierta cantidad de decimales (en este caso 2) */
+
+                document.getElementById("producto-nombre").textContent = pro;
+                document.getElementById("producto-precio").textContent = "S/ " + pre.toFixed(2);
+                document.getElementById("producto-imagen").src = "img/" + imagen;
+                document.getElementById("producto-imagen").alt = pro;
+                document.getElementById("resumen-producto").textContent = pro;
+                document.getElementById("resumen-precio").textContent = "S/ " + pre.toFixed(2);
+
+                let opciones = "<option value=''>Selecciona tu talla</option>";
+
+                /* Cadena de opciones para las tallas */
+                if (tipo == "ropa") {
+                    opciones = opciones + "<option value='S'>S</option>";
+                    opciones = opciones + "<option value='M'>M</option>";
+                    opciones = opciones + "<option value='L'>L</option>";
+                    opciones = opciones + "<option value='XL'>XL</option>";
+                } else {
+                    for (let t = 36; t <= 43; t++) {
+                        /* Las comillas simples se juntan en el resultado final */
+                        opciones = opciones + "<option value='" + t + "'>" + t + "</option>";
+                    }
+                }
+            
+                /*innerHTML coloca las etiquetas de las opciones en la lista. */
+                document.getElementById("talla").innerHTML = opciones;
+                ocultarBoleta();
+            }
+
+
+
+            
+
+            function ocultarBoleta() {
+                /* style.display cambia el display de CSS
+                   none oculta la sección y  block la muestra */
+                document.getElementById("boleta").style.display = "none";
+                document.getElementById("resumen-calculado").style.display = "none";
+                document.getElementById("mensaje-exito").style.display = "none";
+                document.getElementById("resumen-inicial").style.display = "block";
+            }
+
+
+
+
+
+            function generarBoleta() {
+                ocultarBoleta(); /* Limpia un resultado anterior */
+
+                /* lee el formulario */
+                let cli = document.getElementById("cliente").value;
+                let talla = document.getElementById("talla").value;
+                let can = Number(document.getElementById("cantidad").value);
+                let cuotas = Number(document.getElementById("cuotas").value);
+
+                /* comprobaciones con if y for.
+                   return termina la función si hay un dato incorrecto y regresa a su estado incial */
+                
+                   if (cli == "") {
+                    alert("Escribe un nombre");
+                    return;
+                }
+
+                if (talla == "") {
+                    alert("Selecciona una talla");
+                    return;
+                }
+                
+                /* cantidad_valida y coutas_validas usadas para determinar si es valido o no */
+
+                let cantidad_valida = 0;
+
+                for (let n = 1; n <= 20; n++) {
+                    if (can == n) 
+                    { 
+                        cantidad_valida = 1; 
+                    }
+                }
+
+                if (cantidad_valida == 0) {
+                    alert("La cantidad debe ser entre 1 y 20");
+                    return;
+                }
+
+                let cuotas_validas = 0;
+
+                for (let n = 1; n <= 12; n++) {
+                    if (cuotas == n) { cuotas_validas = 1; }
+                }
+
+                if (cuotas_validas == 0) {
+                    alert("El número de cuotas debe ser entre 1 a 12");
+                    return;
+                }
+
+                /* Calculos */
+
+                let subtotal = pre * can;
+                let igv = subtotal * 0.18;
+                let interes, porcentaje;
+
+                if (cuotas <= 10) {
+                    interes = subtotal * 0.20;
+                    porcentaje = 20;
+                } else {
+                    interes = subtotal * 0.10;
+                    porcentaje = 10;
+                }
+
+                let neto = subtotal + igv + interes;
+                let cuota_mes = neto / cuotas;
+
+                /* Para redondear la cuato, primero poniendo solo 2 decimales (usando number porque tofixed devuelve texto), 
+                luego con el "cuotas - 1" se separa la ultima cuota para que la suma final sea el numero redondo */
+
+                let ultima_cuota = neto - Number(cuota_mes.toFixed(2)) * (cuotas - 1);
+
+                /* se completan los espacios con textcontent y
+                   no con document write porque la pagina ya esta cargada
+                   podria generar errores como que se borre el contenido de la pagina al remplaazarlo*/
+
+                document.getElementById("resumen-subtotal").textContent = "S/ " + subtotal.toFixed(2);
+                document.getElementById("resumen-igv").textContent = "S/ " + igv.toFixed(2);
+                document.getElementById("resumen-tasa").textContent = "Interés (" + porcentaje + "%)";
+                document.getElementById("resumen-interes").textContent = "S/ " + interes.toFixed(2);
+                document.getElementById("resumen-total").textContent = "S/ " + neto.toFixed(2);
+                document.getElementById("resumen-cuota").textContent = "S/ " + cuota_mes.toFixed(2);
+
+                document.getElementById("boleta-cliente").textContent = cli;
+                document.getElementById("boleta-plan").textContent = cuotas + " cuotas";
+                document.getElementById("boleta-producto").textContent = pro;
+                document.getElementById("boleta-talla").textContent = talla;
+                document.getElementById("boleta-cantidad").textContent = can;
+                document.getElementById("boleta-precio").textContent = "S/ " + pre.toFixed(2);
+                document.getElementById("boleta-subtotal").textContent = "S/ " + subtotal.toFixed(2);
+                document.getElementById("boleta-igv").textContent = "S/ " + igv.toFixed(2);
+                document.getElementById("boleta-tasa").textContent = "Interés (" + porcentaje + "%)";
+                document.getElementById("boleta-interes").textContent = "S/ " + interes.toFixed(2);
+                document.getElementById("boleta-total").textContent = "S/ " + neto.toFixed(2);
+
+                /* el for repite el codigo por cada cuota cada repeticion se guarda como una nueva fila 
+                y solo la repeticion final se guardara como ultima_cuota (esto para el redondeo)*/
+
+                let filas = "";
+
+                for (let a = 1; a <= cuotas; a++) 
+                {
+                    let monto;
+
+                    if (a == cuotas) 
+                    { 
+                        monto = ultima_cuota;
+                    }
+
+                    else 
+                    { 
+                        monto = cuota_mes; 
+                    }
+
+                    /* Cada repeticion crea una cadena con un numero de cuota nuevo */
+
+                    filas = filas + "<div class='cuota-item'><span>Cuota N.º " + a + "</span><strong>S/ " + monto.toFixed(2) + "</strong></div>";
+                }
+
+                /* innerHTML permite poner contenido html (como el de la fila 476 con el "filas = filas)"
+                dentro de un elemento, en este caso "lista-cuotas" */
+                /* styledisplay block hace visible "boleta", "mensaje-directo" y "resumen-calculado" */
+                /* styledisplay none hace que resumen-inicial desaparesca */
+                document.getElementById("lista-cuotas").innerHTML = filas;
+                document.getElementById("boleta").style.display = "block";
+                document.getElementById("resumen-calculado").style.display = "block";
+                document.getElementById("mensaje-exito").style.display = "block";
+                document.getElementById("resumen-inicial").style.display = "none";
+            }
+
+            /* Llamada inicial: prepara el primer producto y sus tallas. */
+            elegirProducto();
+        </script>
+    </body>
+</html>
