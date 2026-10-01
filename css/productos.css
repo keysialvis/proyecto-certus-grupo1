@@ -461,3 +461,14 @@
         padding: 8px 20px;
     }
 }
+
+/* Compra: enlaces al formulario de cada producto. */
+.texts a.comprar-producto { display: inline-flex; gap: 26px; align-items: center; font-weight: 600; min-height: 44px; }
+.texts a.comprar-producto:hover { background: #181b19; color: #fff; }
+.texts a.comprar-producto:focus-visible { outline: 3px solid #386855; outline-offset: 3px; }
+@media (max-width: 768px) {
+    .banner h1 { font-size: 40px; padding: 12px 0; }
+    .piederecho { width: 100%; flex-wrap: wrap; gap: 8px; }
+}
+
+.banner .aviso-compra { color: #fff; text-align: center; font-family: Segoe UI, sans-serif; font-size: 14px; padding-bottom: 12px; }
