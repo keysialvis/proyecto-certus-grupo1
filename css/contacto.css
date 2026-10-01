@@ -143,8 +143,8 @@ background-color: #92a39a;
 transition: background-color 0.3 ease;
 }
 /*------- END FORMULARIO--------------------*/
+/*------------------------------------------*/
 /*-----------------------------------*/
-
 /*------- VENTANA DE AVISO (EMERGENTE) -------*/
 .ventana-emergente {
     display: none; /* Inicia oculto */
@@ -195,7 +195,7 @@ transition: background-color 0.3 ease;
     background-color: #92a39a;
 }
 /*-------END VENTANA DE AVISO (EMERGENTE) -------*/
-
+/*-----------------------------------------------*/
 /*------- FOOTER --------------------*/
 .footer{
     background-color: rgb(33, 32, 31);
