@@ -144,6 +144,20 @@
                 </div>
             </div>
         </section>
+        <!-- SECCIÓN SIMULADOR: cupon dscto en Compras  -->
+        <section class="seccion-simulador">
+            <h2>Simulador de Cupon de descuento.</h2>
+            <p>Calcula el subtotal, aplica cupones (<code>RISERUN10</code> o <code>OTOÑO20</code>) y verifica tu envío gratis.</p>
+            
+            <button class="btn-simulador" onclick="calcularCarrito()">
+                Simular Compra
+            </button>
+
+            <!-- Aquí se insertará el resultado de JavaScript -->
+            <div id="resultado-carrito" class="tarjeta-resultado">
+                <p style="text-align: center; color: #777;"><em>Haz clic en el botón superior para iniciar la simulación.</em></p>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="logo-pie">
@@ -158,5 +172,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/simulador.js"></script>
 </body>
 </html>
