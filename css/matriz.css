@@ -254,6 +254,7 @@ body {
     font-size: 14px;
     font-weight: 500;
     transition: background-color 0.2s, color 0.2s;
+    background-color: transparent;
 }
 
 .boton-tarjeta:hover {
