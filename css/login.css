@@ -1,0 +1,182 @@
+/* Botones del login en el header. */
+.login-cuenta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-left: 16px;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.login-boton {
+    width: auto;
+    margin: 0;
+    padding: 10px 16px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.login-boton:hover {
+    background-color: #ffffff;
+    color: #181818;
+}
+
+.login-salir {
+    display: none;
+}
+
+/* dialog mantiene la ventana oculta hasta llamar a showModal(). */
+.login-ventana {
+    width: 90%;
+    max-width: 400px;
+    max-height: 90vh;
+    margin: auto;
+    padding: 32px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
+    color: #181818;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+
+/* Fondo oscuro que aparece detrás de la ventana. */
+.login-ventana::backdrop {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.login-cerrar {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #181818;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.login-cerrar:hover {
+    background-color: #eeeeee;
+}
+
+.login-marca {
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.login-ventana h2 {
+    margin: 0 0 6px;
+    font-size: 28px;
+}
+
+.login-descripcion {
+    margin-bottom: 24px;
+    color: #666666;
+    font-size: 14px;
+}
+
+.login-ventana label {
+    display: block;
+    margin: 16px 0 6px;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-ventana input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #181818;
+    font-family: inherit;
+    font-size: 16px;
+    box-shadow: none;
+}
+
+.login-ventana input:focus {
+    outline: 2px solid #b192b8;
+    outline-offset: 2px;
+}
+
+.login-mensaje {
+    min-height: 24px;
+    margin: 12px 0;
+    color: #b42318;
+    font-size: 13px;
+}
+
+.login-entrar {
+    width: 100%;
+    margin: 0;
+    padding: 13px;
+    border: none;
+    border-radius: 4px;
+    background-color: #181818;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-entrar:hover {
+    background-color: #3d3d3d;
+}
+
+.login-prueba {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: #f5f5f9;
+    color: #555555;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* El menú puede acomodarse cuando se añade el botón del login. */
+.nav, .menu-compra {
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@media (max-width: 1100px) {
+    .header, .cabecera-compra {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        padding: 16px 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-cuenta {
+        flex-basis: 100%;
+        margin: 10px 0 0;
+    }
+
+    .login-ventana {
+        padding: 28px 24px;
+    }
+}
