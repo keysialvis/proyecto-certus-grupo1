@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/matriz.css">
     <!-- enlace para los iconos de redes sociales -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
@@ -23,6 +24,12 @@
             <a href="nosotros.html">Nosotros</a>
             <a href="productos.html">Productos</a>
             <a href="contacto.html">Contacto</a>
+            <!-- Login -->
+            <div class="login-cuenta">
+                <span id="estado-login" role="status"></span>
+                <button type="button" id="boton-login" class="login-boton" onclick="abrirLogin();">Iniciar sesión</button>
+                <button type="button" id="boton-salir" class="login-boton login-salir" onclick="cerrarSesion();">Cerrar sesión</button>
+            </div>
         </nav>
         
         <div class="redes-sociales">
@@ -32,6 +39,31 @@
             <a href=""><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </header>
+
+    <!-- LOGIN: ventana flotante compartida por todas las páginas -->
+    <!-- dialog se abre con showModal(), se cierra con close() y también con Escape. -->
+    <dialog id="ventana-login" class="login-ventana" aria-labelledby="titulo-login" onclose="document.getElementById('formulario-login').reset();">
+        <button type="button" class="login-cerrar" onclick="cerrarLogin();" aria-label="Cerrar ventana de inicio de sesión">&times;</button>
+
+        <p class="login-marca">RISE&RUN STREETWEAR</p>
+        <h2 id="titulo-login">Iniciar sesión</h2>
+        <p class="login-descripcion">Ingresa tus datos para continuar.</p>
+
+        <!-- return false evita recargar la página al enviar el formulario -->
+        <form id="formulario-login" onsubmit="iniciarSesion(); return false;">
+            <label for="login-usuario">Usuario</label>
+            <input type="text" id="login-usuario" name="usuario" placeholder="Escribe tu usuario" required>
+
+            <label for="login-clave">Contraseña</label>
+            <input type="password" id="login-clave" name="clave" placeholder="Escribe tu contraseña" required>
+
+            <p id="mensaje-login" class="login-mensaje" role="alert"></p>
+            <button type="submit" class="login-entrar">Iniciar sesión</button>
+        </form>
+
+        <p class="login-prueba">Cuenta de prueba: <strong>usuario</strong> · Clave: <strong>contraseña</strong></p>
+    </dialog>
+
 <!-- MAIN: CONTENIDO DE LA PAGE RISE AND RUN -------->
     <main>
 
@@ -128,5 +160,6 @@
     </footer>
 
     <script src="js/promos_cupon.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Compra | Rise&Run</title>
         <link rel="stylesheet" href="css/compra.css">
+        <link rel="stylesheet" href="css/login.css">
     </head>
 
     <body>
@@ -19,8 +20,37 @@
                 <a href="nosotros.html">Nosotros</a>
                 <a class="activo" href="productos.html">Productos</a>
                 <a href="contacto.html">Contacto</a>
+                <div class="login-cuenta">
+                    <span id="estado-login" role="status"></span>
+                    <button type="button" id="boton-login" class="login-boton" onclick="abrirLogin();">Iniciar sesión</button>
+                    <button type="button" id="boton-salir" class="login-boton login-salir" onclick="cerrarSesion();">Cerrar sesión</button>
+                </div>
             </nav>
         </header>
+
+        <!-- LOGIN: ventana flotante compartida por todas las páginas. -->
+        <!-- dialog se abre con showModal(), se cierra con close() y también con Escape. -->
+        <dialog id="ventana-login" class="login-ventana" aria-labelledby="titulo-login" onclose="document.getElementById('formulario-login').reset();">
+            <button type="button" class="login-cerrar" onclick="cerrarLogin();" aria-label="Cerrar ventana de inicio de sesión">&times;</button>
+
+            <p class="login-marca">RISE&RUN STREETWEAR</p>
+            <h2 id="titulo-login">Iniciar sesión</h2>
+            <p class="login-descripcion">Ingresa tus datos para continuar.</p>
+
+            <!-- return false evita recargar la página al enviar el formulario. -->
+            <form id="formulario-login" onsubmit="iniciarSesion(); return false;">
+                <label for="login-usuario">Usuario</label>
+                <input type="text" id="login-usuario" name="usuario" placeholder="Escribe tu usuario" autocomplete="username" required autofocus>
+
+                <label for="login-clave">Contraseña</label>
+                <input type="password" id="login-clave" name="clave" placeholder="Escribe tu contraseña" autocomplete="current-password" required>
+
+                <p id="mensaje-login" class="login-mensaje" role="alert"></p>
+                <button type="submit" class="login-entrar">Entrar</button>
+            </form>
+
+            <p class="login-prueba">Cuenta de prueba: <strong>admin</strong> · Clave: <strong>1234</strong></p>
+        </dialog>
 
         <main class="pagina-compra">
             <a class="volver" href="productos.html">← Volver a productos</a>
@@ -255,5 +285,6 @@
         </footer>
 
         <script src="js/compra.js"></script>
+        <script src="js/login.js"></script>
     </body>
 </html>
