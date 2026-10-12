@@ -157,18 +157,18 @@ body {
 
 .banner-boton {
     display: inline-block;
-    background-color: #ffffff;
-    color: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
     text-decoration: none;
-    padding: 12px 28px;
-    border-radius: 30px; 
+    padding: 12px 32px;
     font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.2s ease;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .banner-boton:hover {
-    background-color: #e5e5e5;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 /*-----------------------------------*/
